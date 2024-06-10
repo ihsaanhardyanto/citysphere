@@ -105,7 +105,7 @@ export default function PasswordInput() {
 										href="/forgotpw"
 										className="-mt-1 flex justify-end text-xs font-bold"
 									>
-										Forgot Password
+										Forgot Password?
 									</Link>
 								</div>
 							</div>
@@ -121,7 +121,7 @@ export default function PasswordInput() {
 								Login
 							</button>
 						</div>
-						<div className="flex flex-row gap-2 text-wrap text-xs">
+						<div className="flex flex-row gap-1 text-wrap text-xs">
 							<p>Not Registered Yet?</p>
 							<Link href="/register" className="font-bold">
 								Create Account
