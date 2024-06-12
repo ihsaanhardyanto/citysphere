@@ -3,7 +3,6 @@
 import LoginRegisterFooter from "@/components/loginRegisterFooter";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { useState } from "react";
 
 export default function PasswordInput() {
@@ -81,7 +80,7 @@ export default function PasswordInput() {
 												style={{ display: showPassword ? "none" : "block" }}
 											/>
 										</svg>
-                    
+
 										{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +101,7 @@ export default function PasswordInput() {
 										</svg>
 									</div>
 									<Link
-										href="/forgotpw"
+										href="/forgot_password"
 										className="-mt-1 flex justify-end text-xs font-bold"
 									>
 										Forgot Password?
