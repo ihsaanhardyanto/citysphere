@@ -11,6 +11,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: '/home',
+        destination: '/home/thread',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
