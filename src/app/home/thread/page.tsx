@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
-import UserThread from "@/components/user-thread";
+import UserThread from "@/components/home/user-thread";
 import {
   MdImage,
   MdOutlineEmojiEmotions,

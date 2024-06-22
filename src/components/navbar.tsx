@@ -1,30 +1,36 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const links = [
+  {
+    path: "home",
+    name: "Home",
+  },
+  {
+    path: "events",
+    name: "Events",
+  },
+  {
+    path: "community",
+    name: "Community",
+  },
+  {
+    path: "maps",
+    name: "Maps",
+  },
+  {
+    path: "faq",
+    name: "FAQ",
+  },
+];
 
 export default function Navbar() {
-  const links = [
-    {
-      path: "/home",
-      name: "Home",
-    },
-    {
-      path: "/events",
-      name: "Events",
-    },
-    {
-      path: "/community",
-      name: "Community",
-    },
-    {
-      path: "/maps",
-      name: "Maps",
-    },
-    {
-      path: "/faq",
-      name: "FAQ",
-    },
-  ];
+  const pathname = usePathname().split("/")[1];
+  const [activeTab, setActiveTab] = useState<string | null>(pathname);
 
   return (
     <nav className=" bg-black p-5 ">
@@ -47,11 +53,11 @@ export default function Navbar() {
           {links.map((link) => {
             return (
               <li key={link.path} className="flex items-center justify-center">
-                <div className="">
-                  <Link href={link.path}>
-                    <span>{link.name}</span>
-                  </Link>
-                </div>
+                <Link href={`/${link.path}`}>
+                  <span className={activeTab === link.path ? "border-b-2" : ""}>
+                    {link.name}
+                  </span>
+                </Link>
               </li>
             );
           })}
@@ -84,7 +90,7 @@ export default function Navbar() {
               </svg>
             </div>
 
-            <span>Location</span>
+            <span>Bandung, West Java</span>
           </div>
           <div id="settings">
             {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}

@@ -3,8 +3,6 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 
 import Navbar from "@/components/navbar";
-import Leftbar from "@/components/home/leftbar";
-import Rightbar from "@/components/home/rightbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,12 +26,8 @@ export default function RootLayout({
         className={`${poppins.variable} flex h-dvh w-full flex-col font-poppins`}
       >
         <Navbar />
-        <main className="flex max-h-[calc(100svh-4.5rem)] w-full">
-          <Leftbar />
-          <div className=" max-h-[calc(100svh-4.5rem)] w-full overflow-auto">
-            {children}
-          </div>
-          <Rightbar />
+        <main className="max-h-[calc(100svh-4.5rem)] w-full overflow-auto">
+          {children}
         </main>
       </body>
     </html>
