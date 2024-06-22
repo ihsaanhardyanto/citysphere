@@ -4,8 +4,15 @@ import Link from "next/link";
 import { BsPlusLg } from "react-icons/bs";
 import { IoArrowBack } from "react-icons/io5";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Create() {
+  const { toast } = useToast();
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
+
   return (
     <div className="flex h-full w-full items-center justify-center p-10">
       <div className="flex w-3/4 flex-col items-center">
@@ -19,7 +26,7 @@ export default function Create() {
             Create your community!
           </h1>
         </div>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1">
@@ -70,6 +77,13 @@ export default function Create() {
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-black bg-black px-4 py-2 text-white transition-all duration-300 hover:bg-zinc-800"
+                onClick={() => {
+                  toast({
+                    title: "Your community was created successfully ✅",
+                    description:
+                      "Now you can start to create events and invite members!",
+                  });
+                }}
               >
                 <BsPlusLg className="text-xl font-extrabold" />
                 <p>Create Community</p>

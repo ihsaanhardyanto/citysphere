@@ -250,7 +250,7 @@ export default function Leftbar() {
           className="h-10 w-10"
         />
         <div className="flex flex-col gap-1">
-          <h2 className="font-bold">Aldo Ronaldo</h2>
+          <h2 className="font-bold">Reynaldo</h2>
           <p className="text-xs">Social Activist on Greenpeace</p>
         </div>
       </div>

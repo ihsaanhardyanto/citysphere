@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { HiSearch } from "react-icons/hi";
 import { IoArrowBack } from "react-icons/io5";
+import { useToast } from "@/components/ui/use-toast";
 
 const eventTags = [
   "Environment",
@@ -21,6 +22,7 @@ const eventTags = [
 
 export default function Create() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { toast } = useToast();
 
   function handleSelectedTag(tag: string) {
     if (selectedTags.includes(tag)) {
@@ -30,6 +32,10 @@ export default function Create() {
     } else {
       setSelectedTags((prev) => [...prev, tag]);
     }
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
   }
 
   return (
@@ -45,7 +51,7 @@ export default function Create() {
             Create your events!
           </h1>
         </div>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1">
@@ -118,6 +124,13 @@ export default function Create() {
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-black bg-black px-4 py-2 text-white transition-all duration-300 hover:bg-zinc-800"
+                onClick={() => {
+                  toast({
+                    title: "Your events is created! ✅",
+                    description:
+                      "Now you can see your events in the events page.",
+                  });
+                }}
               >
                 <BsPlusLg className="text-xl font-extrabold" />
                 <p>Create Events</p>

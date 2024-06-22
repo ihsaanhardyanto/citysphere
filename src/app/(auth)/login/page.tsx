@@ -117,7 +117,7 @@ export default function PasswordInput() {
                 type="submit"
                 className="w-full rounded-3xl bg-zinc-800 p-2 text-white transition-all duration-300 ease-in-out hover:bg-zinc-900"
               >
-                Login
+                <Link href="/home/thread">Login</Link>
               </button>
             </div>
             <div className="flex flex-row gap-1 text-wrap text-xs">

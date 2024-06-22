@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
 
+import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/navbar";
 
 const poppins = Poppins({
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className="max-h-[calc(100svh-4.5rem)] w-full overflow-auto">
           {children}
         </main>
+        <Toaster />
       </body>
     </html>
   );

@@ -100,7 +100,7 @@ export default function RegisterPage() {
               </div>
               <div className="flex items-center justify-center">
                 <Button type="submit" className="w-1/2 rounded-3xl">
-                  Create Account
+                  <Link href={"/login"}>Create Account</Link>
                 </Button>
               </div>
             </div>
