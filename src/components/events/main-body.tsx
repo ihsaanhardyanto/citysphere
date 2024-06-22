@@ -100,7 +100,7 @@ export default function MainBody() {
         {eventData.map((event) => (
           <div
             key={event.id}
-            className="flex cursor-pointer flex-col gap-2 rounded-xl border border-black p-4 transition-all duration-300 hover:bg-black hover:text-white"
+            className="flex cursor-pointer flex-col gap-2 rounded-xl border border-black p-4 shadow-lg transition-all duration-300 hover:bg-black hover:text-white"
           >
             <h2 className="text-xl">{event.title}</h2>
             <div className="flex flex-wrap gap-1 text-xs">
